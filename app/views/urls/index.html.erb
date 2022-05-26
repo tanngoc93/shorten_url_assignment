@@ -9,8 +9,9 @@
         <th scope="col">#</th>
         <th scope="col">Original URL</th>
         <th scope="col">Shorten URL</th>
+        <th scope="col" style="text-align: center;">Total Clicks</th>
         <th scope="col" style="text-align: center;">Created Date</th>
-        <th scope="col" style="text-align: center;">#</th>
+        <th scope="col" style="text-align: center;"></th>
       </tr>
     </thead>
     <tbody>
@@ -20,6 +21,7 @@
     	      <th scope="row"><%= index + 1 %></th>
     	      <td><%= link_to url.original_url, url.original_url, target: "_blank" %></td>
     	      <td><%= link_to url.shorten_url(root_url), redirect_path(url.token), target: "_blank" %></td>
+            <td style="text-align: center;"><%= url.click_analytics %></td>
     	      <td style="text-align: center;"><%= url.created_at.strftime("%d/%m/%Y") %></td>
     	      <td style="text-align: center;">
     	      	<a href="#">

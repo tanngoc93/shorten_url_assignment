@@ -12,7 +12,7 @@
   <ul class="menu" style="margin-top: 10px;">
     <li style="font-size: 1.5rem;"><%= link_to "<< Back", url_path %></li>
     <li style="font-size: 1.5rem;"><%= link_to "New Shorten", urls_path %></li>
-    <li style="font-size: 1.5rem;"><%= button_to "Destroy", urls_path %></li>
+    <li style="font-size: 1.5rem;"><%= button_to "Destroy", @url, method: :delete %></li>
   </ul>
 </div>
 

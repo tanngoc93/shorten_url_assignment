@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   resources :urls
 
-  get  "/access_tokens", to: "access_tokens#show", as: :access_tokens
+  put  "/access_tokens/refresh", to: "access_tokens#update", as: :refresh_access_token
+  get  "/access_tokens", to: "access_tokens#show", as: :access_token
   get  "/:token", to: "redirections#show", as: :redirect
 
   # Defines the root path route ("/")
