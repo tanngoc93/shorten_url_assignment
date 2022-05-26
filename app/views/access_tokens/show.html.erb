@@ -1,0 +1,37 @@
+<div
+  class="container"
+  style="width: 50%; margin-top: 10vh;"
+>
+  <p><i>Your Access Token</i></p>
+  <h4>
+  	<%= @access_token %>
+  </h4>
+  <hr />
+  <ul class="menu">
+    <li><%= link_to "New Shorten", root_url %></li>
+    <li><%= link_to "URL List", urls_path %></li>
+  </ul>
+</div>
+
+<style type="text/css">
+  p, h2, h3, h4 {
+    text-align: center;
+  }
+
+  ul.menu {
+    text-align: center;
+  }
+
+  ul.menu > li {
+    border-right: solid 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+  }
+
+  ul.menu > li:last-child {
+    border-right: unset;
+  }
+</style>

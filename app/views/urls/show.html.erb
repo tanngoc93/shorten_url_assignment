@@ -1,0 +1,49 @@
+<div
+  class="container"
+  style="width: 50%; margin-top: 10vh;"
+>
+  <h2><i>URL Details</i></h2>
+  <h4>
+  	<%= link_to @url.original_url, @url.original_url, target: "_blank" %>
+  </h4>
+  <h4><i>Your shorten URL as below:</i></h4>
+  <h4>
+  	<i>
+  		<%= link_to @url.shorten_url(root_url), redirect_path(@url.token), target: "_blank" %>
+  	</i>
+  </h4>
+  <hr />
+  <h3>
+    <i>Your shorten URL got total <span style="font-size: 2.2rem; font-weight: bold;"><%= @url.click_analytics %></span> click(s)</i>
+  </h3>
+  <hr />
+  <ul class="menu">
+    <li><%= link_to "New Shorten", root_url %></li>
+    <li><%= link_to "URL List", urls_path %></li>
+    <li><%= link_to "Edit", edit_url_path %></li>
+    <li><%= button_to "Destroy", @url, method: :delete %></li>
+  </ul>
+</div>
+
+<style type="text/css">
+	p, h2, h3, h4 {
+		text-align: center;
+	}
+
+  ul.menu {
+    text-align: center;
+  }
+
+  ul.menu > li {
+    border-right: solid 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+  }
+
+  ul.menu > li:last-child {
+    border-right: unset;
+  }
+</style>

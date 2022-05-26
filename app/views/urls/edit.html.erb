@@ -1,0 +1,40 @@
+<div
+  class="container"
+  style="width: 50%; margin-top: 25vh;"
+>
+  <h3>You're currently on the editing page</h3>
+  <%= form_for(@url, action: :edit_url_path, class: "form-inline") do |form| %>
+    <div class="input-group input-group-lg">
+      <%= form.text_field :original_url, class: "form-control input-lg", placeholder: "Your URL here...", style: "border-radius: 5px 0 0 5px;" %>
+      <%= form.submit "Update", class: "btn btn-lg btn-secondary", style: "border-radius: 0 5px 5px 0;" %>
+    </div>
+  <% end %>
+  <ul class="menu" style="margin-top: 10px;">
+    <li style="font-size: 1.5rem;"><%= link_to "<< Back", url_path %></li>
+    <li style="font-size: 1.5rem;"><%= link_to "New Shorten", urls_path %></li>
+    <li style="font-size: 1.5rem;"><%= button_to "Destroy", urls_path %></li>
+  </ul>
+</div>
+
+<style type="text/css">
+  p, h2, h3, h4 {
+    text-align: center;
+  }
+
+  ul.menu {
+    text-align: center;
+  }
+
+  ul.menu > li {
+    border-right: solid 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+  }
+
+  ul.menu > li:last-child {
+    border-right: unset;
+  }
+</style>

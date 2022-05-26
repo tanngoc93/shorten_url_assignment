@@ -1,0 +1,62 @@
+version: "3.9"
+
+networks:
+  bridge-network:
+    driver: bridge
+
+volumes:
+  db:
+  bundle_cache:
+
+services:
+  db:
+    container_name: db
+    image: postgres:14.0
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432
+    volumes:
+      - db:/var/lib/postgresql/data
+    networks:
+      - bridge-network
+
+  adminer:
+    container_name: adminer
+    image: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - bridge-network
+
+  web:
+    container_name: web
+    tty: true
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: ./.dockerdev/Dockerfile
+      args:
+        RUBY_VERSION: "3.0.3"
+    working_dir: /home/app/html
+    environment:
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_USER: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_DEVELOPMENT: data_development
+      DATABASE_TEST: data_test
+      BUNDLE_PATH: /bundle/vendor
+      RAILS_ENV: development
+      PORT: 3000
+    command: /bin/sh ".dockerdev/commander/commander.dev.sh"
+    volumes:
+      - .:/home/app/html:rw
+      - bundle_cache:/bundle
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - bridge-network
