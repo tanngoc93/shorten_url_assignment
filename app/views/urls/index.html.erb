@@ -17,24 +17,24 @@
     <tbody>
       <% if @urls.any? %>
         <% @urls.each_with_index do |url, index| %>
-        	<tr>
-    	      <th scope="row"><%= index + 1 %></th>
-    	      <td><%= link_to url.original_url, url.original_url, target: "_blank" %></td>
-    	      <td><%= link_to url.shorten_url(root_url), redirect_path(url.token), target: "_blank" %></td>
+          <tr>
+            <th scope="row"><%= index + 1 %></th>
+            <td><%= link_to url.original_url, url.original_url, target: "_blank" %></td>
+            <td><%= link_to url.shorten_url(root_url), redirect_path(url.token), target: "_blank" %></td>
             <td style="text-align: center;"><%= url.click_analytics %></td>
-    	      <td style="text-align: center;"><%= url.created_at.strftime("%d/%m/%Y") %></td>
-    	      <td style="text-align: center;">
-    	      	<a href="#">
-    	          <span class="label label-default"><%= link_to "Show", url_path(url) %></span>
-    	        </a>
-    	      </td>
-        	</tr>
+            <td style="text-align: center;"><%= url.created_at.strftime("%d/%m/%Y") %></td>
+            <td style="text-align: center;">
+              <a href="#">
+                <span class="label label-default"><%= link_to "Show", url_path(url) %></span>
+              </a>
+            </td>
+          </tr>
         <% end %>
       <% else %>
         <tr>
           <th>nothing to show</th>
         </tr>
-  	  <% end %>
+      <% end %>
     </tbody>
   </table>
   <hr />

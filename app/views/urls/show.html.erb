@@ -4,13 +4,13 @@
 >
   <h2><i>URL Details</i></h2>
   <h4>
-  	<%= link_to @url.original_url, @url.original_url, target: "_blank" %>
+    <%= link_to @url.original_url, @url.original_url, target: "_blank" %>
   </h4>
   <h4><i>Your shorten URL as below:</i></h4>
   <h4>
-  	<i>
-  		<%= link_to @url.shorten_url(root_url), redirect_path(@url.token), target: "_blank" %>
-  	</i>
+    <i>
+      <%= link_to @url.shorten_url(root_url), redirect_path(@url.token), target: "_blank" %>
+    </i>
   </h4>
   <hr />
   <h3>
@@ -26,9 +26,9 @@
 </div>
 
 <style type="text/css">
-	p, h2, h3, h4 {
-		text-align: center;
-	}
+  p, h2, h3, h4 {
+    text-align: center;
+  }
 
   ul.menu {
     text-align: center;
