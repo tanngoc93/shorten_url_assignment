@@ -21,12 +21,12 @@ docker-compose build
 
 * Run
 ```html
-docker-compose build
+docker-compose up
 ```
 
 * Or
 ```html
-docker-compose build -d
+docker-compose up -d
 ```
 
 * Access
@@ -34,7 +34,7 @@ docker-compose build -d
 http://localhost:3000
 ```
 
-### Shortener URL
+### Shortener URL explained
 * When user creates a shortened URL, the application will generate a unique token attached to URL, which has a length is 5 (include only letters / numbers and it's lowercase).
 
 * When someone has the shortened URL access on the browser (the shortened format : `app_root_url`/`url.token)`), the application will look it up in the database by column `url.token`.
