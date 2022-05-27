@@ -1,24 +1,44 @@
-# README
+### 1. Please rename or duplicate file `master.key.dev` to `master.key`
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### 2. Install Docker & Docker Compose
 
-Things you may want to cover:
+#### Docker
+```html
+https://docs.docker.com/get-docker/
+```
 
-* Ruby version
+#### Docker Compose
+```html
+https://docs.docker.com/compose/install/
+```
 
-* System dependencies
+### 3. Build & run docker applications
 
-* Configuration
+* Build
+```html
+docker-compose build
+```
 
-* Database creation
+* Run
+```html
+docker-compose build
+```
 
-* Database initialization
+* Or
+```html
+docker-compose build -d
+```
 
-* How to run the test suite
+* Access
+```html
+http://localhost:3000
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Shortener URL
+* When user creates a shortened URL, the application will generate a unique token attached to URL, which has a length is 5 (include only letters / numbers and it's lowercase).
 
-* Deployment instructions
+* When someone has the shortened URL access on the browser (the shortened format : `app_root_url`/`url.token)`), the application will look it up in the database by column `url.token`.
 
-* ...
+* If the URL exists, the application will increase the number of clicks of the URL by +1 and redirect user to `original_url`
+
+* If not, they will redirect to `root_url`
