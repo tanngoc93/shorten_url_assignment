@@ -1,3 +1,9 @@
+### Version
+
+* Ruby 3.0.3
+* Rails 7.x.x
+* Docker & Docker Compose latest version
+
 ### 1. Please rename or duplicate file `config/master.key.dev` to `config/master.key`
 
 ### 2. Install Docker & Docker Compose
