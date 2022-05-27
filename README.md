@@ -1,4 +1,4 @@
-### 1. Please rename or duplicate file `master.key.dev` to `master.key`
+### 1. Please rename or duplicate file `config/master.key.dev` to `config/master.key`
 
 ### 2. Install Docker & Docker Compose
 
