@@ -37,7 +37,7 @@ http://localhost:3000
 ### Shortener URL explained
 * When user creates a shortened URL, the application will generate a unique token attached to URL, which has a length is 5 (include only letters / numbers and it's lowercase).
 
-* When someone has the shortened URL access on the browser (the shortened format : `app_root_url`/`url.token)`), the application will look it up in the database by column `url.token`.
+* When someone has the shortened URL & access on the browser (the shortened format is `app_root_url`/`url.token`), the application will look it up in the database by column `url.token`.
 
 * If the URL exists, the application will increase the number of clicks of the URL by +1 and redirect user to `original_url`
 
